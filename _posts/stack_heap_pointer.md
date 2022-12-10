@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What's Jekyll?
+title: Stack Heap And Pointers
 ---
 
 [Main](./index.md)

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What's Jekyll?
+title: Mutability
 ---
 
 [Main](./index.md)

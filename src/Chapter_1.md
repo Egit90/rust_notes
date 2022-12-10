@@ -1,33 +1,34 @@
-## <font color="green">Debug Print</font>
+## <font color="green">Semicolons</font>
+
+Almost everything in Rust is an expression. An expression is something that returns a value. If you put a semicolon you are suppressing the result of this expression.
+
+If you end your function with an expression without a semicolon, the result of this last expression will be returned
 
 ```
-fn main(){
-    let my_number = {
-        second_number = 8;
-        second_number + 7;
-    }
-    println!("{}" , second_number); // 🛑 This is an error. because my_number will return ()
+// here a = 4
+let a = {
+    let inner = 2;
+    inner * inner
+};
+```
+
+➡️ skinny arrow -> what the function is returning
+
+```
+// 8 without the semicolons means return 8
+fn number () -> i32 {
+    8
+}
+
+fn main () {
+    println!("the number is {}",number());
 }
 ```
 
-with this code block we will have two issues.
-
 ```
-println!("{}" , second_number);
-                ^^^^^^^^^^^^ `()` cannot be formatted with the default formatter
-the trait `std::fmt::Display` is not implemented for `()`
-```
-
-We have to use debug printing {:?}
-or pretty debug printing {:#?}
-
-```
-fn main(){
-    let my_number = {
-        second_number = 8;
-        second_number + 7;
-    }
-    println!("output is: {:?}" , second_number); // => output is: ()
+// this will return ()
+fn number(){
+    8;
 }
 ```
 

@@ -4,7 +4,7 @@
 
 2️⃣ In Rust there is only one owner for a piece of data.
 
-```
+```rust
 let country = String::from("Austria"); // The owner of data.
 let ref_one = &country;           // just looking at it.
 let ref_two = & country;          // just looking at it.
@@ -16,9 +16,9 @@ This prints Austria.
 
 ---
 
-```
+```rust
 fn return_str() -> &str{
-    let country = String::from("Austria");\
+    let country = String::from("Austria");
     let country_ref = &country;
     country_ref
 }

@@ -1,20 +1,26 @@
 # Summary
 
-[Primitive](./primitive.md)
+[My Notes](../README.md)
 
-[semicolons](./semicolons.md)
+- [Primitive](./primitive.md)
+- [Semicolons](./semicolons.md)
+- [Debug Print](./debugPrint.md)
 
-[debugPrint](./debugPrint.md)
+- [Mutability](./mutability.md)
 
-[Mutability](./mutability.md)
+- [Shadowing](./shadowing.md)
 
-[Shadowing](./shadowing.md)
+- [Stack Heap Pointer](stack_heap_pointer.md)
 
-[Stack Heap Pointer](stack_heap_pointer.md)
+- [Strings](./strings.md)
 
-[Strings](./strings.md)
+- [const static let](const_static_const.md)
 
-[const static let](const_static_const.md)
+# References
 
-[references](refernces.md)
+- [References](./refrences/main.md)
 
+  - [Mutable References](./refrences/mutRef.md)
+  - [References and functions](./refrences/ref2func.md)
+
+- [Copy Types](test.md)

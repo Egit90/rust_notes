@@ -1,10 +1,3 @@
----
-layout: post
-title: Const Static let
----
-
-[Main](index.md)
-
 # <font color="green">const</font>
 
 - Rust will not use type inference.

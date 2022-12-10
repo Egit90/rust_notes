@@ -1,10 +1,3 @@
----
-layout: post
-title: Semicolons
----
-
-[Main](./index.md)
-
 # <font color="green">Semicolons</font>
 
 Almost everything in Rust is an expression. An expression is something that returns a value. If you put a semicolon you are suppressing the result of this expression.
@@ -19,7 +12,7 @@ let a = {
 };
 ```
 
-➡️ skinnt arrrow -> waht the function is returnning
+➡️ skinny arrow -> what the function is returning
 
 ```
 // 8 without the semicolons means return 8

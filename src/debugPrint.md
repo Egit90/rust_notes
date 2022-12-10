@@ -1,10 +1,3 @@
----
-layout: post
-title: Debug Print
----
-
-[Main](./index.md)
-
 # <font color="green">Debug Print</font>
 
 ```

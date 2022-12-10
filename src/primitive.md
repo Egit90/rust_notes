@@ -1,4 +1,4 @@
-## <font color="green">Primitive</font>
+# <font color="green">Primitive</font>
 
 ---
 
@@ -40,4 +40,3 @@ let float1 = 5.0;          // this is a f64
 let float2: f32 = 8.5     // this is a f32
 let total= float1 + float2  //🛑🛑 WRONG we are mixing two types this will not compile
 ```
-

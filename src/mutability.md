@@ -1,10 +1,3 @@
----
-layout: post
-title: Mutability
----
-
-[Main](./index.md)
-
 # <font color="green">Mutability</font>
 
 vars are either
@@ -12,7 +5,7 @@ vars are either
 - mutable => can be changed
 - immutable => can't be changed
 
-🚀 vars are immutable by default
+🚀 vars are immutable by default.
 
 ```
 let my_number = 8;

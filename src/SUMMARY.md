@@ -1,6 +1,20 @@
 # Summary
 
-- [ <font color="green">Important</font>](./Chapter_3.md)
-- [ <font color="green">Debug Print</font>](./Chapter_2.md)
-- [ <font color="green">Semicolons</font>](./Chapter_1.md)
-- [ <font color="green">Primitive</font>](./Chapter_0.md)
+[Primitive](./primitive.md)
+
+[semicolons](./semicolons.md)
+
+[debugPrint](./debugPrint.md)
+
+[Mutability](./mutability.md)
+
+[Shadowing](./shadowing.md)
+
+[Stack Heap Pointer](stack_heap_pointer.md)
+
+[Strings](./strings.md)
+
+[const static let](const_static_const.md)
+
+[references](refernces.md)
+

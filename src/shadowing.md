@@ -1,12 +1,5 @@
----
-layout: post
-title: Shadowing
----
-
-[Main](./index.md)
 
 # <font color="green">Shadowing</font>
-
 ```
 let my_number = 8;
 println!(" My number is: {}", my_number);

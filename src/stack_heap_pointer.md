@@ -1,10 +1,3 @@
----
-layout: post
-title: Stack Heap And Pointers
----
-
-[Main](./index.md)
-
 # <font color="green">Stack Heap Pointers</font>
 
 🚀 The Stack is Fast

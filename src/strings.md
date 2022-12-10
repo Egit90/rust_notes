@@ -1,10 +1,3 @@
----
-layout: post
-title: String and &str
----
-
-[Main](index.md)
-
 # <font color="green"> Strings </font>
 
 - String

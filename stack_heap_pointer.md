@@ -67,8 +67,10 @@ fn main(){
 }
 ```
 
-https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=46766bd2625dd7036b948ee93e4b4bb0
+```
+fn main(){
+  let my_number = 8;
+  let my_reference = &my_number;
+  println!("{}" , my_reference == *my_number) // ✔️
 
-https://gist.github.com/46766bd2625dd7036b948ee93e4b4bb0
-
-https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&code=fn%20main()%7B%0D%0A%20%20let%20my_number%20%3D%208%3B%0D%0A%20%20let%20my_reference%20%3D%20%26my_number%3B%0D%0A%20%20println!(%22%7B%7D%22%20%2C%20my_reference%20%3D%3D%20my_number)%20%2F%2F%20%F0%9F%9B%91%20Can't%20compare%20a%20reference%20to%20a%20number%0D%0A%7D
+```

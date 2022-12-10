@@ -1,6 +1,6 @@
 [Main](./index.md)
 
-# Debug Print
+# <font color="green">Debug Print</font>
 
 ```
 fn main(){

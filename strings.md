@@ -1,6 +1,6 @@
 [Main](index.md)
 
-# Strings
+# <font color="green"> Strings </font>
 
 - String
   - little slower.

@@ -1,6 +1,6 @@
 [Main](index.md)
 
-# const
+# <font color="green">const</font>
 
 - Rust will not use type inference.
 - Values that do not change.
@@ -12,7 +12,7 @@ const my_number = 8; // 🛑 Will not work there is no type!! also will give a w
 const MY_NUMBER :i8 = 8; // ✔️
 ```
 
-# static
+# <font color="green">static</font>
 
 - Rust will not use type inference.
 - Values that do not change.
@@ -24,7 +24,7 @@ const MY_NUMBER :i8 = 8; // ✔️
 static SEASONS: [&str; 4] = ["Spring", "Summer", "Fall", "Winter"];
 ```
 
-# Let
+# <font color="green">let</font>
 
 - used to introduce a new set of variables into the current scope, as given by a pattern.
 - immutable by default.

@@ -1,6 +1,6 @@
 [Main](./index.md)
 
-# Mutability
+# <font color="green">Mutability</font>
 
 vars are either
 

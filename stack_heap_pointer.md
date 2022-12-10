@@ -1,6 +1,6 @@
 [Main](./index.md)
 
-# Stack Heap Pointers
+# <font color="green">Stack Heap Pointers</font>
 
 🚀 The Stack is Fast
 
@@ -30,11 +30,11 @@ Chapter 4: My family            30
 Chapter 5: Future plans         43
 ```
 
-## Important
+## <font color="green">Important</font>
 
 - The pointer you usually see in Rust is called a reference.
 - A reference points to the memory of another value.
-- A reference means you borrow the value, but you don't own it. 🦀🦀🦀🦀
+- <font color="red">A reference means you borrow the value, but you don't own it. 🦀🦀🦀🦀</font>
 - It's the same as our book: the table of contents doesn't own the information. It's the chapters that own the information.
 - In Rust, references have a & in front of them. So:
 
@@ -54,9 +54,9 @@ fn main() {
 }
 ```
 
-# & vs \*
+# <font color="green">& vs \*</font>
 
-- - means that you take a reference away back to the value 🦀
+<font color="red"> - "\*" Means that you take a reference away back to the value 🦀</font>
 
 ```
 fn main(){

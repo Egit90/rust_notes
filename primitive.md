@@ -1,6 +1,6 @@
 [Main](./index.md)
 
-# Primitive
+# <font color="green">Primitive</font>
 
 ---
 
@@ -20,7 +20,7 @@ let number = 2_u16   //u16;
 
 ```
 
-# Chars
+# <font color="green">Chars</font>
 
 🚀️The `char` type represents a single character
 
@@ -30,7 +30,7 @@ let number = 2_u16   //u16;
 
 ---
 
-# Floats
+# <font color="green">Floats</font>
 
 🚀 f32 f64
 🚀 rust will choose f64 by default

@@ -1,6 +1,6 @@
 [Main](./index.md)
 
-# Semicolons
+# <font color="green">Semicolons</font>
 
 Almost everything in Rust is an expression. An expression is something that returns a value. If you put a semicolon you are suppressing the result of this expression.
 

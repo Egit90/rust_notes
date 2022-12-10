@@ -1,6 +1,6 @@
 [Main](./index.md)
 
-# Shadowing
+# <font color="green">Shadowing</font>
 
 ```
 let my_number = 8;

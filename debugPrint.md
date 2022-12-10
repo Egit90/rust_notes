@@ -1,4 +1,4 @@
-[Main](./main.md)
+[Main](./index.md)
 
 # Debug Print
 
@@ -11,12 +11,15 @@ fn main(){
     println!("{}" , second_number); // 🛑 This is an error. because my_number will return ()
 }
 ```
+
 with this code block we will have two issues.
+
 ```
-println!("{}" , second_number); 
+println!("{}" , second_number);
                 ^^^^^^^^^^^^ `()` cannot be formatted with the default formatter
 the trait `std::fmt::Display` is not implemented for `()`
 ```
+
 We have to use debug printing {:?}
 or pretty debug printing {:#?}
 
@@ -25,7 +28,7 @@ fn main(){
     let my_number = {
         second_number = 8;
         second_number + 7;
-    } 
+    }
     println!("output is: {:?}" , second_number); // => output is: ()
 }
 ```

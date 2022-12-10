@@ -1,4 +1,4 @@
-[Main](./main.md)
+[Main](./index.md)
 
 # Mutability
 

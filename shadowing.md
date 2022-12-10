@@ -1,4 +1,4 @@
-[Main](./main.md)
+[Main](./index.md)
 
 # Shadowing
 
@@ -25,6 +25,7 @@ fn main() {
     println!("{}", my_number); // prints 8
 }
 ```
+
 Example usage:
 
 ```

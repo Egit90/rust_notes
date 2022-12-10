@@ -55,7 +55,7 @@ fn main(){
 # <font color="green">Mutable References</font>
 
 - Regular reference gives you a view to the data. `&number`
-   - You can have as many immutable references as you want.
+  - You can have as many immutable references as you want.
 - mutable reference gives you the ability to change the data. `&mut number`
   - <font color="red"> the owner must be mutable if you want to use mutable reference. </font>
   - You can have **ONLY ONE** mutable reference.
@@ -72,4 +72,61 @@ let ref = &mut my_number; // ✔️
 
 *num += 10;    // to change the value we use *
 println!("{}" , my_number); // 17
+```
+
+```
+let mut number =6;
+let number_ref = &number;
+let number_change = &mut number // 🛑 we cant borrow number as mutable because it is also borrowed as immutable
+*number_change += 10; // 🛑
+println!("{}" , number_ref); // 🛑
+```
+
+```
+let mut number =6;
+let number_change = &mut number //
+*number_change += 10; // ✔️ This is fine because in this point we only have one mutable ref
+let number_ref = &number;
+println!("{}" , number_ref); // ✔️
+```
+
+---
+
+# <font color="Green"> Giving References to Functions </font>
+
+- we can pass refs to functions both mutable and immutable.
+
+```
+fn print_country(country_name: String) {
+  println!("{}", country_name)
+}
+fn main(){
+  let country = String::from("Austria");
+  print_country(country);  // Value moved here. the function now own the data. The data will be removed once the fuc dies.
+  print_country(country); // 🛑Error value used after move. the data does not exist anymore!
+}
+```
+
+We can solve this problem by passing a ref to the function
+```
+fn print_country(country_name: &String) {
+  println!("{}", country_name)
+}
+fn main(){
+  let country = String::from("Austria");
+  print_country(&country);  // ✔️ the func will not take ownership 
+  print_country(&country); // ✔️
+  println!("{}",country); // ✔️
+}
+```
+example for passing mutable ref
+```
+fn add_and_print_hungary(country_name: &mut String){
+  country_name.push_str("-Hungry");
+  println!("Now it says: {}" , country_name);
+}
+fn main() {
+  let mut country = String::from("Austria");
+  add_and_print_hungary(&mut country);
+}
 ```

@@ -90,7 +90,7 @@ let a = {
 };
 ```
 
-➡️ skinnt arrrow -> waht the function is returnning
+➡️ skinny arrow -> what the function is returning
 
 ```
 // 8 without the semicolons means return 8

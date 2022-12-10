@@ -1,3 +1,8 @@
+---
+layout: post
+title: What's Jekyll?
+---
+
 # Elie's Rust Notes
 
 [Primitive](./primitive.md)

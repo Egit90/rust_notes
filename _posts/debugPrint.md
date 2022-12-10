@@ -1,3 +1,8 @@
+---
+layout: post
+title: What's Jekyll?
+---
+
 [Main](./index.md)
 
 # <font color="green">Debug Print</font>

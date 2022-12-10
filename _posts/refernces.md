@@ -1,3 +1,8 @@
+---
+layout: post
+title: What's Jekyll?
+---
+
 [Main](index.md)
 
 ---
@@ -108,18 +113,21 @@ fn main(){
 ```
 
 We can solve this problem by passing a ref to the function
+
 ```
 fn print_country(country_name: &String) {
   println!("{}", country_name)
 }
 fn main(){
   let country = String::from("Austria");
-  print_country(&country);  // ✔️ the func will not take ownership 
+  print_country(&country);  // ✔️ the func will not take ownership
   print_country(&country); // ✔️
   println!("{}",country); // ✔️
 }
 ```
+
 example for passing mutable ref
+
 ```
 fn add_and_print_hungary(country_name: &mut String){
   country_name.push_str("-Hungry");

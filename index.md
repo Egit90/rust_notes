@@ -1,6 +1,6 @@
 # Elie's Rust Notes
 
-[Primivie](./primitive.md)
+[Primitive](./primitive.md)
 
 [semicolons](./semicolons.md)
 
@@ -11,3 +11,7 @@
 [Shadowing](./shadowing.md)
 
 [Stack_Heap_Pointer](stack_heap_pointer.md)
+
+[Strings](./strings.md)
+
+[const_static_let](const_static_const.md)

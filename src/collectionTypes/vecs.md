@@ -19,9 +19,9 @@ fn main(){
 
 ```rust
 fn main(){
-        let name1 = String::from("Elie");
+    let name1 = String::from("Elie");
     let name2 = String::from("Maatouk");
-    let my_vec: Vec<String> = Vec::new();
+    let mut my_vec: Vec<String> = Vec::new();
     my_vec.push(name1);
     my_vec.push(name2);
 

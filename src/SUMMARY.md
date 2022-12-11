@@ -1,6 +1,6 @@
 # Summary
 
-[My Notes](../README.md)
+[My Notes](./README.md)
 
 - [Primitive](./primitive.md)
 - [Semicolons](./semicolons.md)

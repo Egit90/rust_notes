@@ -23,4 +23,12 @@
   - [Mutable References](./refrences/mutRef.md)
   - [References and functions](./refrences/ref2func.md)
 
-- [Copy Types](test.md)
+# Traits
+
+- [Traits](./Traits/main.md)
+  - [copy](./Traits/copy.md)
+  - [clone](./Traits/clone.md)
+
+# Collection Types
+
+- [Arrays](./collectionTypes/arrays.md)

@@ -32,3 +32,4 @@
 # Collection Types
 
 - [Arrays](./collectionTypes/arrays.md)
+- [Vecs](./collectionTypes/vecs.md)

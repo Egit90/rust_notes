@@ -33,3 +33,17 @@
 
 - [Arrays](./collectionTypes/arrays.md)
 - [Vecs](./collectionTypes/vecs.md)
+- [Tuples](./collectionTypes/tuples.md)
+
+# Control Flow
+
+- [if else](./control_flow/if_else.md)
+
+# Match statements
+
+- [match](./control_flow/match.md)
+  - [using tuples](./control_flow/match_tuple.md)
+  - [with if](./control_flow/match_if.md)
+  - [example with 3 vars](./control_flow/match_3var.md)
+  - [must return same type](./control_flow/match_same_type.md)
+  - [using var in the return](./control_flow/match_return_car.md)

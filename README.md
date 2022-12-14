@@ -1,4 +1,6 @@
-# rust_notes https://egit90.github.io/rust_notes/
+# rust_notes
+
+- https://egit90.github.io/rust_notes/
 
 My notes following Easy Rust tutorial.
 

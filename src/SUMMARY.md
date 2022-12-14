@@ -33,6 +33,9 @@
 
 - [Arrays](./collectionTypes/arrays.md)
 - [Vecs](./collectionTypes/vecs.md)
+
+  - [ 🏃 Exercise](./collectionTypes/exercise.md)
+
 - [Tuples](./collectionTypes/tuples.md)
 
 # Control Flow
@@ -49,5 +52,6 @@
   - [using var in the return](./control_flow/match_return_car.md)
 
 # Struct
+
 - [Intro](./Struct/intro.md)
   - [Printing a Struct](./Struct/print.md)

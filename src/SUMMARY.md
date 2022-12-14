@@ -47,3 +47,7 @@
   - [example with 3 vars](./control_flow/match_3var.md)
   - [must return same type](./control_flow/match_same_type.md)
   - [using var in the return](./control_flow/match_return_car.md)
+
+# Struct
+- [Intro](./Struct/intro.md)
+  - [Printing a Struct](./Struct/print.md)

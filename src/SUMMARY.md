@@ -55,3 +55,10 @@
 
 - [Intro](./Struct/intro.md)
   - [Printing a Struct](./Struct/print.md)
+
+# enums
+
+- [Intro](./Enums/intro.md)
+  - [enum data](./Enums/data.md)
+  - [use Statement](./Enums/use.md)
+  - [enum index](./Enums/index.md)

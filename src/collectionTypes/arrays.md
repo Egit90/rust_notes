@@ -1,7 +1,8 @@
-# Arrays
+# <font color="green">Arrays</font>
 
 - Array items are fixed in size.
 - Array items have the same type.
+- Fast
 
 ```rust
 fn main(){

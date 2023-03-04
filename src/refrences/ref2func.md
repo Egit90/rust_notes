@@ -2,7 +2,7 @@
 
 - we can pass refs to functions both mutable and immutable.
 
-```
+```rust
 fn print_country(country_name: String) {
   println!("{}", country_name)
 }
@@ -15,7 +15,7 @@ fn main(){
 
 We can solve this problem by passing a ref to the function
 
-```
+```rust
 fn print_country(country_name: &String) {
   println!("{}", country_name)
 }
@@ -29,7 +29,7 @@ fn main(){
 
 example for passing mutable ref
 
-```
+```rust
 fn add_and_print_hungary(country_name: &mut String){
   country_name.push_str("-Hungry");
   println!("Now it says: {}" , country_name);

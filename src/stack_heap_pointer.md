@@ -28,6 +28,8 @@ Chapter 4: My family            30
 Chapter 5: Future plans         43
 ```
 
+- The table of content is like the stack that gives you a little bit of info. Then you open a book to the page number to see all the info "like the heap".
+
 ## <font color="green">Important</font>
 
 - The pointer you usually see in Rust is called a reference.
@@ -43,7 +45,7 @@ let my_reference = &my_variable // makes a reference.
 
 - You can also have a reference to a reference, or any number of references.
 
-```
+```rust
 fn main() {
     let my_number = 15; // This is an i32
     let single_reference = &my_number; //  This is a &i32
@@ -56,7 +58,7 @@ fn main() {
 
 <font color="red"> - "\*" Means that you take a reference away back to the value 🦀</font>
 
-```
+```rust
 fn main(){
   let my_number = 8;
   let my_reference = &my_number;
@@ -65,10 +67,10 @@ fn main(){
 }
 ```
 
-```
+```rust
 fn main(){
   let my_number = 8;
   let my_reference = &my_number;
-  println!("{}" , my_reference == *my_number) // ✔️
-
+  println!("{}" , *my_reference == my_number) // ✔️
+}
 ```

@@ -5,11 +5,13 @@
 2️⃣ In Rust there is only one owner for a piece of data.
 
 ```rust
-let country = String::from("Austria"); // The owner of data.
-let ref_one = &country;           // just looking at it.
-let ref_two = & country;          // just looking at it.
+fn main(){
+  let country = String::from("Austria"); // The owner of data.
+  let ref_one = &country;           // just looking at it.
+  let ref_two = & country;          // just looking at it.
 
-println!("{} , {} , {}" , country , ref_one , ref_two); // ✔️
+  println!("{} , {} , {}" , country , ref_one , ref_two); // ✔️
+}
 ```
 
 This prints Austria.

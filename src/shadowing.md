@@ -1,16 +1,18 @@
-
 # <font color="green">Shadowing</font>
-```
-let my_number = 8;
-println!(" My number is: {}", my_number);
 
-let my_number = 9.2; // ✔️ This is a new var with  a f64 type !!
-println!("My alterd number is: {}" , my_number);
+```rust
+fn main(){
+    let my_number = 8;
+    println!(" My number is: {}", my_number);
+
+    let my_number = 9.2; // ✔️ This is a new var with  a f64 type !!
+    println!("My altered number is: {}" , my_number);
+}
 ```
 
 🚀 Shadowing will not kill the first var! it only block it ...
 
-```
+```rust
 fn main() {
     let my_number = 8; // This is an i32
     println!("{}", my_number); // prints 8
@@ -26,7 +28,7 @@ fn main() {
 
 Example usage:
 
-```
+```rust
 fn times_two(number: i32) -> i32 {
     number * 2
 }

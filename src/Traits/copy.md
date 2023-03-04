@@ -9,8 +9,21 @@ fn print_country(country: String){
 }
 fn main(){
     let country;
-    print_country(country); // var country will be dropped
+    print_country(country); // var country will be dropped and String does not have a copy Trait
     print_country(country); // 🛑 country now does not exist.
+}
+```
+
+- we can fix this with the clone trait
+
+```rust
+fn print_country(country: String){
+    println!("{}", country);
+}
+fn main(){
+    let country = String::from("Syria");
+    print_country(country.clone()); // var country will be cloned
+    print_country(country); // ✔️ country now does not exist.
 }
 ```
 

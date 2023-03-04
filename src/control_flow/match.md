@@ -8,7 +8,7 @@ fn main(){
     match my_number{
         8 => println!("it is a 8"),
         10 => println!("it is a 10"),
-    }
+    }  // 🛑 non-exhaustive patterns: means that you didn't think of everything
 }
 ```
 

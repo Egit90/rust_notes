@@ -55,6 +55,8 @@
 
 - [Intro](./Struct/intro.md)
   - [Printing a Struct](./Struct/print.md)
+  - [ 🏃 Exercise 1](./Struct/exercise1.md)
+  - [ 🏃 Exercise 2](./Struct/exercise2.md)
 
 # enums
 

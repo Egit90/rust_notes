@@ -64,3 +64,6 @@
   - [enum data](./Enums/data.md)
   - [use Statement](./Enums/use.md)
   - [enum index](./Enums/index.md)
+  - [ 🏃 exercise 1](./Enums/exercise1.md)
+  - [ 🏃 exercise 2](./Enums/exercise2.md)
+  - [ 🏃 exercise 3](./Enums/exercise3.md)

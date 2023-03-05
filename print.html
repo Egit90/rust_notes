@@ -1,0 +1,1390 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>My Rust Notes</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">My Notes</a></li><li class="chapter-item expanded "><a href="primitive.html"><strong aria-hidden="true">1.</strong> Primitive</a></li><li class="chapter-item expanded "><a href="semicolons.html"><strong aria-hidden="true">2.</strong> Semicolons</a></li><li class="chapter-item expanded "><a href="debugPrint.html"><strong aria-hidden="true">3.</strong> Debug Print</a></li><li class="chapter-item expanded "><a href="mutability.html"><strong aria-hidden="true">4.</strong> Mutability</a></li><li class="chapter-item expanded "><a href="shadowing.html"><strong aria-hidden="true">5.</strong> Shadowing</a></li><li class="chapter-item expanded "><a href="stack_heap_pointer.html"><strong aria-hidden="true">6.</strong> Stack Heap Pointer</a></li><li class="chapter-item expanded "><a href="strings.html"><strong aria-hidden="true">7.</strong> Strings</a></li><li class="chapter-item expanded "><a href="const_static_const.html"><strong aria-hidden="true">8.</strong> const static let</a></li><li class="chapter-item expanded affix "><li class="part-title">References</li><li class="chapter-item expanded "><a href="refrences/main.html"><strong aria-hidden="true">9.</strong> References</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="refrences/mutRef.html"><strong aria-hidden="true">9.1.</strong> Mutable References</a></li><li class="chapter-item expanded "><a href="refrences/ref2func.html"><strong aria-hidden="true">9.2.</strong> References and functions</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Traits</li><li class="chapter-item expanded "><a href="Traits/main.html"><strong aria-hidden="true">10.</strong> Traits</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Traits/copy.html"><strong aria-hidden="true">10.1.</strong> copy</a></li><li class="chapter-item expanded "><a href="Traits/clone.html"><strong aria-hidden="true">10.2.</strong> clone</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Collection Types</li><li class="chapter-item expanded "><a href="collectionTypes/arrays.html"><strong aria-hidden="true">11.</strong> Arrays</a></li><li class="chapter-item expanded "><a href="collectionTypes/vecs.html"><strong aria-hidden="true">12.</strong> Vecs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="collectionTypes/exercise.html"><strong aria-hidden="true">12.1.</strong> 🏃 Exercise</a></li></ol></li><li class="chapter-item expanded "><a href="collectionTypes/tuples.html"><strong aria-hidden="true">13.</strong> Tuples</a></li><li class="chapter-item expanded affix "><li class="part-title">Control Flow</li><li class="chapter-item expanded "><a href="control_flow/if_else.html"><strong aria-hidden="true">14.</strong> if else</a></li><li class="chapter-item expanded affix "><li class="part-title">Match statements</li><li class="chapter-item expanded "><a href="control_flow/match.html"><strong aria-hidden="true">15.</strong> match</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="control_flow/match_tuple.html"><strong aria-hidden="true">15.1.</strong> using tuples</a></li><li class="chapter-item expanded "><a href="control_flow/match_if.html"><strong aria-hidden="true">15.2.</strong> with if</a></li><li class="chapter-item expanded "><a href="control_flow/match_3var.html"><strong aria-hidden="true">15.3.</strong> example with 3 vars</a></li><li class="chapter-item expanded "><a href="control_flow/match_same_type.html"><strong aria-hidden="true">15.4.</strong> must return same type</a></li><li class="chapter-item expanded "><a href="control_flow/match_return_car.html"><strong aria-hidden="true">15.5.</strong> using var in the return</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Struct</li><li class="chapter-item expanded "><a href="Struct/intro.html"><strong aria-hidden="true">16.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Struct/print.html"><strong aria-hidden="true">16.1.</strong> Printing a Struct</a></li><li class="chapter-item expanded "><a href="Struct/exercise1.html"><strong aria-hidden="true">16.2.</strong> 🏃 Exercise 1</a></li><li class="chapter-item expanded "><a href="Struct/exercise2.html"><strong aria-hidden="true">16.3.</strong> 🏃 Exercise 2</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">enums</li><li class="chapter-item expanded "><a href="Enums/intro.html"><strong aria-hidden="true">17.</strong> Intro</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="Enums/data.html"><strong aria-hidden="true">17.1.</strong> enum data</a></li><li class="chapter-item expanded "><a href="Enums/use.html"><strong aria-hidden="true">17.2.</strong> use Statement</a></li><li class="chapter-item expanded "><a href="Enums/index.html"><strong aria-hidden="true">17.3.</strong> enum index</a></li><li class="chapter-item expanded "><a href="Enums/exercise1.html"><strong aria-hidden="true">17.4.</strong> 🏃 exercise 1</a></li><li class="chapter-item expanded "><a href="Enums/exercise2.html"><strong aria-hidden="true">17.5.</strong> 🏃 exercise 2</a></li><li class="chapter-item expanded "><a href="Enums/exercise3.html"><strong aria-hidden="true">17.6.</strong> 🏃 exercise 3</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">My Rust Notes</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="my-notes"><a class="header" href="#my-notes">My Notes</a></h1>
+<p>My notes following Easy Rust tutorial.</p>
+<ul>
+<li>https://github.com/Dhghomon</li>
+<li>https://dhghomon.github.io/</li>
+<li>https://www.youtube.com/watch?v=-lYeJeQ11OI&amp;list=PLfllocyHVgsRwLkTAhG0E-2QxCf-ozBkk</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="primitive"><a class="header" href="#primitive"><font color="green">Primitive</font></a></h1>
+<hr />
+<p><strong><code>signed integers</code></strong> i8, i16, i32, i64, i128, and isize.</p>
+<p><strong><code>Unsigned integers</code></strong> u8, u16, u32, u64, u128, and usize.</p>
+<p>🚀️ isize = 64 bit if possible if not, 32 bits</p>
+<p>🚀️ If we dont choose an integer type rust will will choose i32</p>
+<pre><code>let my_number = 10  //32 Rust default
+
+let number: u16 = 2  //u16;
+let number = 2_u16   //u16;
+
+</code></pre>
+<h1 id="chars"><a class="header" href="#chars"><font color="green">Chars</font></a></h1>
+<p>🚀️The <code>char</code> type represents a single character</p>
+<p>🚀️A <code>char</code> is a ‘Unicode scalar value’</p>
+<p>🚀️We use single quote to represent a <code>char</code> <code>let temp = 'a';</code></p>
+<hr />
+<h1 id="floats"><a class="header" href="#floats"><font color="green">Floats</font></a></h1>
+<p>🚀 f32 f64
+🚀 rust will choose f64 by default</p>
+<pre><code>let my _float = 5.5; //f64
+
+let float1 = 5.0;          // this is a f64
+let float2: f32 = 8.5     // this is a f32
+let total= float1 + float2  //🛑🛑 WRONG we are mixing two types this will not compile
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="semicolons"><a class="header" href="#semicolons"><font color="green">Semicolons</font></a></h1>
+<p>Almost everything in Rust is an expression. An expression is something that returns a value. If you put a semicolon you are suppressing the result of this expression.</p>
+<p>If you end your function with an expression without a semicolon, the result of this last expression will be returned</p>
+<pre><code>// here a = 4
+let a = {
+    let inner = 2;
+    inner * inner
+};
+</code></pre>
+<p>➡️ skinny arrow -&gt; what the function is returning</p>
+<pre><code>// 8 without the semicolons means return 8
+fn number () -&gt; i32 {
+    8
+}
+
+fn main () {
+    println!(&quot;the number is {}&quot;,number());
+}
+</code></pre>
+<pre><code>// this will return ()
+fn number(){
+    8;
+}
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="debug-print"><a class="header" href="#debug-print"><font color="green">Debug Print</font></a></h1>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number = {
+        second_number = 8;
+        second_number + 7;
+    }
+    println!(&quot;{}&quot; , second_number); // 🛑 This is an error. because my_number will return ()
+}
+</code></pre></pre>
+<p>with this code block we will have two issues.</p>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>println!(&quot;{}&quot; , second_number);
+//                ^^^^^^^^^^^^ `()` cannot be formatted with the default formatter
+//the trait `std::fmt::Display` is not implemented for `()`
+<span class="boring">}
+</span></code></pre></pre>
+<p>the trait <code>std::fmt::Display</code> is not implemented for <code>()</code></p>
+<p>that means () does not have the power of 'Display'</p>
+<p>🚀 Trait = power for types</p>
+<p>We have to use debug printing {:?}</p>
+<p>or pretty debug printing {:#?}</p>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number = {
+        let second_number = 8;
+        second_number + 7;
+    };
+    println!(&quot;output is: {:?}&quot; , my_number); // =&gt; output is: ()
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mutability"><a class="header" href="#mutability"><font color="green">Mutability</font></a></h1>
+<p>vars are either</p>
+<ul>
+<li>mutable =&gt; can be changed</li>
+<li>immutable =&gt; can't be changed</li>
+</ul>
+<p>🚀 vars are immutable by default.</p>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number = 8;
+    println!(&quot; My number is: {}&quot;, my_number);
+
+    my_number = 10; // 🛑 we can't vars are immutable by default
+    println!(&quot;My altered number is: {}&quot; , my_number);
+}
+</code></pre></pre>
+<p>🚀 To make a var mutable we use the &quot;mut&quot; word.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut my_number = 8;
+    println!(&quot; My number is: {}&quot;, my_number);
+
+    my_number = 10; // ✅
+    println!(&quot;My altered number is: {}&quot; , my_number);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shadowing"><a class="header" href="#shadowing"><font color="green">Shadowing</font></a></h1>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number = 8;
+    println!(&quot; My number is: {}&quot;, my_number);
+
+    let my_number = 9.2; // ✔️ This is a new var with  a f64 type !!
+    println!(&quot;My altered number is: {}&quot; , my_number);
+}
+</code></pre></pre>
+<p>🚀 Shadowing will not kill the first var! it only block it ...</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 8; // This is an i32
+    println!(&quot;{}&quot;, my_number); // prints 8
+    {
+        let my_number = 9.2; // This is an f64. It is not my_number - it is completely different!
+        println!(&quot;{}&quot;, my_number) // Prints 9.2
+                                  // But the shadowed my_number only lives until here.
+                                  // The first my_number is still alive!
+    }
+    println!(&quot;{}&quot;, my_number); // prints 8
+}
+</code></pre></pre>
+<p>Example usage:</p>
+<pre><pre class="playground"><code class="language-rust">fn times_two(number: i32) -&gt; i32 {
+    number * 2
+}
+
+fn main() {
+    let final_number = {
+        let y = 10;
+        let x = 9; // x starts at 9
+        let x = times_two(x); // shadow with new x: 18
+        let x = x + y; // shadow with new x: 28
+        x // return x: final_number is now the value of x
+    };
+    println!(&quot;The number is now: {}&quot;, final_number)
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="stack-heap-pointers"><a class="header" href="#stack-heap-pointers"><font color="green">Stack Heap Pointers</font></a></h1>
+<p>🚀 The Stack is Fast</p>
+<p>✈️ Heap is Slower</p>
+<ul>
+<li>Rust needs to know the size of a variable at compile time.</li>
+<li>simple variables like i32 go on the stack, because we know their exact size.
+<ul>
+<li>You always know that an i32 is going to be 4 bytes, because 32 bits = 4 bytes. So i32 can always go on the stack.</li>
+</ul>
+</li>
+<li>Some types don't know the size at compile time. But the stack needs to know the exact size. So what do you do?
+<ul>
+<li>Rust puts the data in the heap, because the heap can have any size of data</li>
+<li>To find it a pointer goes on the stack.</li>
+<li>This is fine because we always know the size of a pointer.</li>
+<li>Computer first goes to the stack, reads the pointer, and follows it to the heap where the data is.</li>
+</ul>
+</li>
+</ul>
+<p>✔️ Pointer are like table of a content of a book</p>
+<pre><code>MY BOOK
+
+TABLE OF CONTENTS
+
+Chapter                        Page
+Chapter 1: My life              1
+Chapter 2: My cat               15
+Chapter 3: My job               23
+Chapter 4: My family            30
+Chapter 5: Future plans         43
+</code></pre>
+<ul>
+<li>The table of content is like the stack that gives you a little bit of info. Then you open a book to the page number to see all the info &quot;like the heap&quot;.</li>
+</ul>
+<h2 id="important"><a class="header" href="#important"><font color="green">Important</font></a></h2>
+<ul>
+<li>The pointer you usually see in Rust is called a reference.</li>
+<li>A reference points to the memory of another value.</li>
+<li><font color="red">A reference means you borrow the value, but you don't own it. 🦀🦀🦀🦀</font></li>
+<li>It's the same as our book: the table of contents doesn't own the information. It's the chapters that own the information.</li>
+<li>In Rust, references have a &amp; in front of them. So:</li>
+</ul>
+<pre><code>let my_variable = 8  // makes a regular variable
+let my_reference = &amp;my_variable // makes a reference.
+</code></pre>
+<ul>
+<li>You can also have a reference to a reference, or any number of references.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_number = 15; // This is an i32
+    let single_reference = &amp;my_number; //  This is a &amp;i32
+    let double_reference = &amp;single_reference; // This is a &amp;&amp;i32
+    let five_references = &amp;&amp;&amp;&amp;&amp;my_number; // This is a &amp;&amp;&amp;&amp;&amp;i32
+}
+</code></pre></pre>
+<h1 id="vs-"><a class="header" href="#vs-"><font color="green">&amp; vs *</font></a></h1>
+<p><font color="red"> - &quot;*&quot; Means that you take a reference away back to the value 🦀</font></p>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+  let my_number = 8;
+  let my_reference = &amp;my_number;
+  println!(&quot;{}&quot; , my_reference == my_number) // 🛑 Can't compare a reference to a number
+                               ^^ no implementation for `&amp;{integer} == {integer}`
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+  let my_number = 8;
+  let my_reference = &amp;my_number;
+  println!(&quot;{}&quot; , *my_reference == my_number) // ✔️
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="strings"><a class="header" href="#strings"><font color="green"> Strings </font></a></h1>
+<ul>
+<li>
+<p>String</p>
+<ul>
+<li>little slower.</li>
+<li>has more functions.</li>
+<li>it is a pointer with a data in the heap.</li>
+<li>Owned type.</li>
+<li>
+<pre><pre class="playground"><code class="language-rust">// we can create String like this:
+fn main(){
+let var = String::from(&quot;Hello, World&quot;);
+let var = &quot;Elie&quot;.to_string();
+}
+</code></pre></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>&amp;str</p>
+<ul>
+<li>string slice</li>
+<li>Simple String</li>
+<li><code>let var  = &quot;hello, world&quot;;</code></li>
+<li>fast</li>
+<li>&quot;&amp;&quot; because it is a reference to use str.</li>
+</ul>
+</li>
+</ul>
+<p>🚀 format! =&gt; Creates a String</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_name = &quot;Billybrobby&quot;;
+    let my_country = &quot;USA&quot;;
+    let my_home = &quot;Korea&quot;;
+
+    let _together = format!(
+        &quot;I am {} and I come from {} but I live in {}.&quot;,
+        my_name, my_country, my_home
+    );
+}
+</code></pre></pre>
+<p>🚀 into! =&gt; makes an owned type.</p>
+<pre><pre class="playground"><code class="language-rust">// this will not work because Rust doesn't know which owned type you want. Many types can be made form a &amp;str
+fn main() {
+    let my_string = &quot;Try to make this a String&quot;.into(); // ⚠️
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let my_string: String = &quot;Try to make this a String&quot;.into(); // ✔️
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="const"><a class="header" href="#const"><font color="green">const</font></a></h1>
+<ul>
+<li>Rust will not use type inference.</li>
+<li>Values that do not change.</li>
+<li>more popular.</li>
+<li>Shadowing is not allowed. <a href="shadowing.html">Shadowing</a></li>
+</ul>
+<pre><code>const my_number = 8; // 🛑 Will not work there is no type!! also will give a warning; should have an uppercase name.
+const MY_NUMBER :i8 = 8; // ✔️
+</code></pre>
+<h1 id="static"><a class="header" href="#static"><font color="green">static</font></a></h1>
+<ul>
+<li>Rust will not use type inference.</li>
+<li>Values that do not change.</li>
+<li>Has a fixed memory location.</li>
+<li>Can act as a global var.</li>
+<li>Shadowing is not allowed. <a href="shadowing.html">Shadowing</a></li>
+</ul>
+<pre><code>static SEASONS: [&amp;str; 4] = [&quot;Spring&quot;, &quot;Summer&quot;, &quot;Fall&quot;, &quot;Winter&quot;];
+</code></pre>
+<h1 id="let"><a class="header" href="#let"><font color="green">let</font></a></h1>
+<ul>
+<li>used to introduce a new set of variables into the current scope, as given by a pattern.</li>
+<li>immutable by default.</li>
+<li>use <code>mut</code> to make it mutable.</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><p><font color="green">References </font></p>
+<p>1️⃣ OwnerShip: Who owns a value.</p>
+<p>2️⃣ In Rust there is only one owner for a piece of data.</p>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let country = String::from(&quot;Austria&quot;); // The owner of data.
+    let ref_one = &amp;country;           // just looking at it.
+    let ref_two = &amp; country;          // just looking at it.
+    println!(&quot;{} , {} , {}&quot; , country , ref_one , ref_two); // ✔️
+}
+
+</code></pre></pre>
+<p>This prints Austria.</p>
+<hr />
+<pre><pre class="playground"><code class="language-rust">fn return_str() -&gt; &amp;str{
+    let country = String::from(&quot;Austria&quot;);   // create a String
+    let country_ref = &amp;country;             // create a ref for that string
+    country_ref                             // return the ref 🛑 the country dies here so the ref dies with it.
+}
+fn main(){
+    let country_name = return_str(); // 🛑 Wrong ...
+}
+</code></pre></pre>
+<ul>
+<li>function return_str() creates a String.</li>
+<li>then it creates a reference to that String.</li>
+<li>Then it tries to return the reference.</li>
+<li>The String lives inside the function and then it dies.</li>
+<li>Now the ref is pointing to a data that no longer exist !!</li>
+<li>🦀🦀<font color="red"> You own a string and you can pass it around. But it's references will die once the owner die. </font></li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn return_str() -&gt; String{
+    let country = String::from(&quot;Austria&quot;);
+    country
+}
+fn main(){
+    let country_name = return_str(); // ✔️  here the ownership goes from country to country_name. ✔️
+}
+</code></pre></pre>
+<ul>
+<li>here the ownership goes from country to country_name. ✔️</li>
+</ul>
+<hr />
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mutable-references"><a class="header" href="#mutable-references"><font color="green">Mutable References</font></a></h1>
+<ul>
+<li>Regular reference gives you a view to the data. <code>&amp;number</code>
+<ul>
+<li>You can have as many immutable references as you want.</li>
+</ul>
+</li>
+<li>mutable reference gives you the ability to change the data. <code>&amp;mut number</code>
+<ul>
+<li><font color="red"> the owner must be mutable if you want to use mutable reference. </font></li>
+<li>You can have <strong>ONLY ONE</strong> mutable reference.</li>
+</ul>
+</li>
+<li>📝 You can't have immutable and mutable reference together.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+  let my_number = 7;
+  let ref = &amp;mut my_number; // ⚠️ WRONG this will not make my_number mutable .. it has to be mutable when created
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+  let mut my_number = 7;
+  let num_ref = &amp;mut my_number; // ✔️
+
+*num_ref += 10;    // to change the value we use *
+println!(&quot;{}&quot; , my_number); // 17
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+  let mut number =6;
+  let number_ref = &amp;number;
+  let number_change = &amp;mut number // 🛑 we cant borrow number as mutable because it is also borrowed as immutable
+  *number_change += 10; // 🛑
+  println!(&quot;{}&quot; , number_ref); // 🛑
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+  let mut number = 6;
+  let number_change = &amp;mut number; // create a mut ref
+  *number_change += 10; // ✔️ This is fine because in this point we only have one mutable ref
+  let number_ref = &amp;number;
+  println!(&quot;{}&quot; , number_ref); // ✔️
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="giving-references-to-functions"><a class="header" href="#giving-references-to-functions"><font color="Green"> Giving References to Functions </font></a></h1>
+<ul>
+<li>we can pass refs to functions both mutable and immutable.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn print_country(country_name: String) {
+  println!(&quot;{}&quot;, country_name)
+}
+fn main(){
+  let country = String::from(&quot;Austria&quot;);
+  print_country(country);  // Value moved here. the function now own the data. The data will be removed once the fuc dies.
+  print_country(country); // 🛑Error value used after move. the data does not exist anymore!
+}
+</code></pre></pre>
+<p>We can solve this problem by passing a ref to the function</p>
+<pre><pre class="playground"><code class="language-rust">fn print_country(country_name: &amp;String) {
+  println!(&quot;{}&quot;, country_name)
+}
+fn main(){
+  let country = String::from(&quot;Austria&quot;);
+  print_country(&amp;country);  // ✔️ the func will not take ownership
+  print_country(&amp;country); // ✔️
+  println!(&quot;{}&quot;,country); // ✔️
+}
+</code></pre></pre>
+<p>example for passing mutable ref</p>
+<pre><pre class="playground"><code class="language-rust">fn add_and_print_hungary(country_name: &amp;mut String){
+  country_name.push_str(&quot;-Hungry&quot;);
+  println!(&quot;Now it says: {}&quot; , country_name);
+}
+fn main() {
+  let mut country = String::from(&quot;Austria&quot;);
+  add_and_print_hungary(&amp;mut country);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="traits"><a class="header" href="#traits"><font color="green">Traits</font></a></h1>
+<ul>
+<li>You can think of Traits as features or the ability.</li>
+<li>e.g String does not have copy Traits but it has a clone.</li>
+<li>e.g i32 has a copy trait</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><ul>
+<li>
+<p>The types that have the copy trait will be copied when they are sent to a function.</p>
+</li>
+<li>
+<p>String doesn't have a copy.</p>
+</li>
+<li>
+<p>This will fail because country var will be dropped when finished with the first print</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn print_country(country: String){
+    println!(&quot;{}&quot;, country);
+}
+fn main(){
+    let country;
+    print_country(country); // var country will be dropped and String does not have a copy Trait
+    print_country(country); // 🛑 country now does not exist.
+}
+</code></pre></pre>
+<ul>
+<li>we can fix this with the clone trait</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn print_country(country: String){
+    println!(&quot;{}&quot;, country);
+}
+fn main(){
+    let country = String::from(&quot;Syria&quot;);
+    print_country(country.clone()); // var country will be cloned
+    print_country(country); // ✔️ country now does not exist.
+}
+</code></pre></pre>
+<ul>
+<li>i32 has a copy trait.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn print_number(number: i32){
+    println!(&quot;{}&quot;, number);
+}
+fn main(){
+    let my_number = 8;
+    print_number(my_number); // ✔️ the value will not be dropped here because a copy of the data will be sent to the function.
+    print_number(my_number); // ✔️ because this implement a copy trait the value still exist
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="clone"><a class="header" href="#clone">clone</a></h1>
+<p>The Clone Trait makes a copy and pass it to a function.</p>
+<pre><pre class="playground"><code class="language-rust">fn print_country(country: String){
+    println!(&quot;{}&quot; , country);
+}
+
+fn main(){
+    let country = String::from(&quot;Austria&quot;);
+    print_country(country.clone());
+    print_country(country);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="arrays"><a class="header" href="#arrays"><font color="green">Arrays</font></a></h1>
+<ul>
+<li>Array items are fixed in size.</li>
+<li>Array items have the same type.</li>
+<li>Fast</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_array = [&quot;a&quot; ; 40];
+    println!(&quot;{:?}&quot; , my_array);
+}
+
+</code></pre></pre>
+<h1 id="array-slicing"><a class="header" href="#array-slicing">Array Slicing</a></h1>
+<ul>
+<li>use a ref</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_arr = [1,2,3,4,5,6,7,8,9,10];
+
+    let three_to_five = &amp;my_arr[2..5];
+    let start_at_two = &amp;my_arr[1..];
+    println!(&quot;three to five {:?} , start at two {:?}&quot; , three_to_five , start_at_two);
+}
+
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vecs"><a class="header" href="#vecs">Vecs</a></h1>
+<ul>
+<li>not as performant as arrays.</li>
+<li>only one type.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let name1 = String::from(&quot;Elie&quot;);
+    let name2 = String::from(&quot;Maatouk&quot;);
+
+    let mut my_vec = Vec::new();
+    my_vec.push(name1);
+    my_vec.push(name2);
+
+    println!(&quot;{:?}&quot; , my_vec );
+}
+
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let name1 = String::from(&quot;Elie&quot;);
+    let name2 = String::from(&quot;Maatouk&quot;);
+    let mut my_vec: Vec&lt;String&gt; = Vec::new();
+    my_vec.push(name1);
+    my_vec.push(name2);
+
+    println!(&quot;{:?}&quot; , my_vec );
+
+}
+
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_vec = vec![1,2,3];
+    println!(&quot;{:?}&quot; , my_vec);
+}
+
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exercise"><a class="header" href="#exercise">Exercise</a></h1>
+<ul>
+<li><a href="https://leetcode.com/problems/remove-element/description/">leet code</a></li>
+<li>Given an integer array nums and an integer val, remove all occurrences of val in nums <strong>in-place</strong>.</li>
+<li>The relative order of the elements may be changed.</li>
+<li>You must instead have the result be placed in the first part of the array nums.</li>
+<li>More formally, if there are k elements after removing the duplicates, then the first k elements of nums should hold the final result.</li>
+</ul>
+<p>Example 1:</p>
+<pre><code>Input: nums = [3,2,2,3], val = 3
+Output: 2, nums = [2,2,_,_]
+Explanation: Your function should return k = 2,
+with the first two elements of nums being 2.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</code></pre>
+<hr />
+<pre><pre class="playground"><code class="language-rust">    pub fn remove_element(nums: &amp;mut Vec&lt;i32&gt;, val: i32) -&gt; i32 {
+        let mut index = 0;
+        for i in 0..nums.len(){
+            if nums[i] != val {
+                nums[index] = nums[i];
+                index += 1;
+            }
+        }
+        println!(&quot;So we take the first {} , from the vec {:?}&quot;, index , nums);
+        index as i32
+    }
+fn main() {
+    remove_element(&amp;mut vec![3,2,2,3],3);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="tuples"><a class="header" href="#tuples">Tuples</a></h1>
+<ul>
+<li>you can have multiple types in tuples.</li>
+<li>to get items inside a tuple .. use tuple.itemNumber ex. tuple.5</li>
+<li>you can destructure items.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let tu = (7,5,&quot;Elie&quot;, [12,3], vec![5,3]);
+    println!(&quot;{:?}&quot;,tu);
+    println!(&quot;item number 3 is {}&quot; , tu.2);
+    let (a,b,..) = (&quot;elie&quot; , &quot;maatouk&quot; ,  2 , [1,2,3]);
+    println!(&quot;{}&quot; , b);
+    println!(&quot;{}&quot; , a);
+
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="if-else"><a class="header" href="#if-else">if else</a></h1>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number = 7;
+    if my_number == 7 {
+        println!(&quot;The Number is sever&quot;)
+    } else if my_number &gt;= 7 {
+        println!(&quot;the number is greater than seven&quot;)
+    } else {
+        println!{&quot;the number is smaller than seven&quot;};
+    }
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match"><a class="header" href="#match">match</a></h1>
+<ul>
+<li>the below code will fail ... because we didn't give it all possibilities. &quot;non-exhaustive pattern&quot;</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number: u8 =5;
+    match my_number{
+        8 =&gt; println!(&quot;it is a 8&quot;),
+        10 =&gt; println!(&quot;it is a 10&quot;),
+    }  // 🛑 non-exhaustive patterns: means that you didn't think of everything
+}
+</code></pre></pre>
+<ul>
+<li>to match everything else use &quot;_&quot;</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number: u8 =5;
+    match my_number{
+        8 =&gt; println!(&quot;it is a 8&quot;),
+        10 =&gt; println!(&quot;it is a 10&quot;),
+        _ =&gt; println!(&quot;it's something else&quot;)
+    }
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match-using-tuples"><a class="header" href="#match-using-tuples">match using tuples</a></h1>
+<ul>
+<li>you can match with a tuple ..</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let sky = &quot;cloudy&quot;;
+    let temp = &quot;warm&quot;;
+    match (sky , temp){
+        (&quot;cloudy&quot;,&quot;cold&quot;) =&gt; println!(&quot;it is cloudy and warm&quot;),
+        (&quot;sunny&quot;,&quot;warm&quot;) =&gt; println!(&quot;it is sunny and warm&quot;),
+        (&quot;cloudy&quot;, &quot;warm&quot;) =&gt; println!(&quot;it is cloudy and warm&quot;),
+        _ =&gt; println!(&quot;it is something else&quot;)
+    }
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match-with-if"><a class="header" href="#match-with-if">match with if</a></h1>
+<ul>
+<li>you can use if inside the match statement</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let children = 5;
+    let married = true;
+    match (children , married){
+        (children , married) if married &amp;&amp; children == 4 =&gt; println!(&quot;married with 4 children&quot;),
+        (children , married) if married &amp;&amp; children == 5 =&gt; println!(&quot;married with 5 children&quot;),
+        (children , married) if married &amp;&amp; children &gt; 0 =&gt; println!(&quot;married with {} children&quot; , {children}),
+        _ =&gt; println!(&quot;{} , number of children {}&quot; , married , children)
+    }
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match-example-with-3-vars"><a class="header" href="#match-example-with-3-vars">match example with 3 vars</a></h1>
+<pre><pre class="playground"><code class="language-rust">fn match_colors(rgb: (u8,u8,u8)){
+    match rgb {
+        (r,_,_) if r &lt; 10 =&gt; println!(&quot;not much red&quot;),
+        (_,g,_) if g &lt; 10 =&gt; println!(&quot;not much green&quot;),
+        (_,_,b) if b &lt; 10 =&gt; println!(&quot;not much blue&quot;),
+            _ =&gt; println!(&quot;looks good&quot;),
+    }
+}
+fn main(){
+    let a = (200,0,0);
+    let b = (50,50,50);
+    let c = (200,50,0);
+    match_colors(a);
+    match_colors(b);
+    match_colors(c);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="match-must-return-same-type"><a class="header" href="#match-must-return-same-type">match must return same type</a></h1>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let my_number = 10;
+    let v = match my_number {
+        10 =&gt; 8,
+        _ =&gt; &quot;Something else&quot; // 🛑 🛑 this will not work return type must be the same!!
+    }
+}
+</code></pre></pre>
+<ul>
+<li>the same rule goes for any checking</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn main(){
+    let v = 2;
+    let a = if v == 2 {5} else (&quot;something else&quot;); // 🛑 🛑 wrong return type must be the same !!
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="using-var-in-the-return"><a class="header" href="#using-var-in-the-return">using var in the return</a></h1>
+<ul>
+<li>to use the match condition in the return portion by giving it a name.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">fn match_number(input: i32) {
+    match input {
+    // here we gave the match condition name &quot;number&quot; now we can use number in the return portion
+    number @ 4 =&gt; println!(&quot;{} is an unlucky number in China &quot;, number),
+    number @  13 =&gt; println!(&quot;{} is unlucky in North America, lucky in Italy! In bocca al lupo!&quot;, number),
+    _ =&gt; println!(&quot;Looks like a normal number&quot;),
+    }
+}
+
+fn main() {
+    match_number(50);
+    match_number(13);
+    match_number(4);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="intro"><a class="header" href="#intro">Intro</a></h1>
+<ul>
+<li>creating your own type, your own Data Structure.</li>
+<li>By convention use upper camel case <code>UpperCamelCase</code></li>
+</ul>
+<h2 id="struct-types"><a class="header" href="#struct-types">Struct Types</a></h2>
+<ul>
+<li>
+<p>Unit Struct</p>
+</li>
+<li>
+<p>Tuple Struct</p>
+</li>
+<li>
+<p>Named Struct</p>
+<pre><pre class="playground"><code class="language-rust">struct FileDirectory;   // ✔️ Unit Struct
+struct Color(u8,u8,u8); // ✔️ Tuple Struct
+struct SizeAndColor {   // ✔️ Named Struct
+    size: u32,
+    color:  Color
+}
+fn main(){
+    let _my_directory = FileDirectory;
+    let my_color = Color(50,60,0);
+    let my_color2 = Color(50,60,0);
+
+    let size_color = SizeAndColor {
+        size: 150,
+        color:  my_color2
+    };
+    println!(&quot;The First Color is: {} &quot; ,my_color.0);
+}
+</code></pre></pre>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="printing-a-struct"><a class="header" href="#printing-a-struct">Printing a Struct</a></h1>
+<ul>
+<li>You <strong>can't</strong> use the display formatter <code>println(&quot;{}&quot;)</code> nor the debug formatter <code>println{:?}</code> to print Struct.</li>
+<li>from the compiler ==&gt; note: add <code>#[derive(Debug)]</code> to <code>SizeAndName</code> or manually <code>impl Debug for SizeAndName</code></li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">struct SizeAndName {   // 🛑 the trait `Debug` is not implemented for `SizeAndName` 
+    size: u8,
+    name: String 
+}
+
+fn main(){
+    let s_c = SizeAndName{
+        size: 150,
+        name: String::from(&quot;elie&quot;)
+    };
+    println!(&quot;{:?}&quot; , s_c);
+}
+
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust"> #[derive(Debug)] 
+struct SizeAndName {
+    size: u8,
+    name: String 
+}
+
+fn main(){
+    let s_c = SizeAndName{
+        size: 150,
+        name: String::from(&quot;elie&quot;)
+    };
+    println!(&quot;{:?}&quot; , s_c);
+}
+
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-exercise-1"><a class="header" href="#-exercise-1">🏃 Exercise 1</a></h1>
+<ul>
+<li>
+<p>Create a struct called Person that has the following fields:</p>
+<ul>
+<li>
+<p>name: a string representing the person's name</p>
+</li>
+<li>
+<p>age: an integer representing the person's age</p>
+</li>
+<li>
+<p>email: an optional string representing the person's email address (this field should default to None)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Then, write a function called create_person that takes in a name and age as arguments and returns a Person struct with those values.</p>
+</li>
+<li>
+<p>After that, write a main function that creates a Person struct using create_person and prints out the values of its fields.</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct Person {
+    name: String,
+    age: u8,
+    email: Option&lt;String&gt;
+}
+
+fn create_person (name: String , age: u8) -&gt; Person{
+    Person {
+        name,
+        age,
+        email: None
+    }
+}
+
+fn main(){
+    let me = create_person(&quot;Elie&quot;.to_string() , 33);
+    println!(&quot;{:#?}&quot; , me);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-exercise-2"><a class="header" href="#-exercise-2">🏃 Exercise 2</a></h1>
+<ul>
+<li>
+<p>Create a struct called Rectangle that has the following fields:</p>
+<ul>
+<li>
+<p>width: a float representing the width of the rectangle</p>
+</li>
+<li>
+<p>height: a float representing the height of the rectangle</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Then, write methods for the Rectangle struct that calculate its:</p>
+<ul>
+<li>area</li>
+<li>perimeter</li>
+<li>diagonal length (use the Pythagorean theorem to calculate this)</li>
+</ul>
+</li>
+<li>
+<p>Finally, write a main function that creates a Rectangle struct with a width of 4.0 and a height of 3.0, and prints out its area, perimeter, and diagonal length.</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct Rectangle {
+    width: f32,
+    height: f32
+}
+
+impl Rectangle {
+    fn calculate_area(&amp;self) -&gt; f32{
+        self.width * self.height
+    }
+    fn calculate_perimeter(&amp;self) -&gt; f32 {
+        2.0 * (self.width + self.height)
+    }
+    fn calculate_diagonal_length(&amp;self) -&gt; f32 {
+        (self.width.powi(2) + self.height.powi(2)).sqrt()
+    }
+}
+
+fn main() {
+    let rec1 = Rectangle { width: 3.0, height: 4.5 };
+    let area = rec1.calculate_area();
+    let perimeter = rec1.calculate_perimeter();
+    let diagonal_length = rec1.calculate_diagonal_length();
+    println!(&quot;Area: {}&quot;, area);
+    println!(&quot;Perimeter: {}&quot;, perimeter);
+    println!(&quot;Diagonal length: {}&quot;, diagonal_length);
+}
+
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="intro-1"><a class="header" href="#intro-1">Intro</a></h1>
+<ul>
+<li>🚀 enum is about choices.</li>
+<li>🚀 They can also hold data.</li>
+<li>🚀 Each variant has like an invisible number that you can reference ..
+<ul>
+<li>enum = enumeration =&gt; a list of choices.</li>
+<li>Upper camel case.</li>
+</ul>
+</li>
+<li>enum vs struct.
+<ul>
+<li>struct is a and b and c and d ...</li>
+<li>enum is a or b or c ...</li>
+</ul>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>enum ChoiceOfThings {
+    Up,
+    Down,
+    Left,
+    Right
+}
+<span class="boring">}
+</span></code></pre></pre>
+<p>Example</p>
+<pre><pre class="playground"><code class="language-rust">enum ThingsInTheSky {
+    Sun,
+    Stars
+}
+
+fn create_skyState (time: i32) -&gt; ThingsInTheSky{
+    match time {
+        6..=18 =&gt; ThingsInTheSky::Sun,                   // 6..=18 means including 18
+        _ =&gt; ThingsInTheSky::Stars
+    }
+}
+
+
+fn check_sky_state(state: &amp;ThingsInTheSky) {
+    match state {
+        ThingsInTheSky::Sun =&gt; println!(&quot;I can see the Sun&quot;),
+        ThingsInTheSky::Stars =&gt; println!(&quot;I can see the Stars&quot;),
+    }
+}
+
+
+fn main(){
+    let time = 8;
+    let sky_state = create_skyState(time);
+    check_sky_state(&amp;sky_state);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enum-data"><a class="header" href="#enum-data">enum data</a></h1>
+<pre><pre class="playground"><code class="language-rust">enum ThingsInTheSky {
+    Sun(String),
+    Stars(String)
+}
+
+fn create_skyState (time: i32) -&gt; ThingsInTheSky{
+    match time {
+        // 🍄 now when we match we can add data 🍄
+        6..=18 =&gt; ThingsInTheSky::Sun(String::from(&quot;I can see the Sun&quot;)),
+        _ =&gt; ThingsInTheSky::Stars(String::from(&quot;I can see the Stars&quot;)),
+    }
+}
+
+
+fn check_sky_state(state: &amp;ThingsInTheSky) {
+    match state {
+        // 🍄 Now we can access the data
+        ThingsInTheSky::Sun(desc) =&gt; println!(&quot;{}&quot;,desc),
+        ThingsInTheSky::Stars(desc) =&gt; println!(&quot;{}&quot;,desc),
+    }
+}
+
+
+fn main(){
+    let time = 8;
+    let sky_state = create_skyState(time);
+    check_sky_state(&amp;sky_state);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="use-statement"><a class="header" href="#use-statement">use Statement</a></h1>
+<ul>
+<li>if we don't want to write the enum name every time we can make use of the use statement.</li>
+<li>it is like an import.</li>
+</ul>
+<p>Before ...</p>
+<pre><pre class="playground"><code class="language-rust">enum Mood{
+    Happy,
+    Sleepy,
+    NotBad,
+    Angry
+}
+
+fn match_mood(mood: &amp;Mood) -&gt; i32{
+
+    let happiness_lvl = match mood {
+        Mood::Happy =&gt; 10,
+        Mood::Sleepy =&gt; 6,
+        Mood::NotBad =&gt; 7,
+        Mood::Angry =&gt; 2,
+    };
+    happiness_lvl
+
+}
+
+fn main(){
+    let mood = Mood::NotBad;
+    let happiness_lel = match_mood(&amp;mood);
+    println!(&quot;Happiness level is {}&quot; , happiness_lel )
+}
+</code></pre></pre>
+<p>After:</p>
+<pre><pre class="playground"><code class="language-rust">enum Mood{
+    Happy,
+    Sleepy,
+    NotBad,
+    Angry
+}
+
+fn match_mood(mood: &amp;Mood) -&gt; i32{
+    // 🍄 import every thing from this enum..
+    use Mood::*;
+    let happiness_lvl = match mood {
+        Happy =&gt; 10,
+        Sleepy =&gt; 6,
+        NotBad =&gt; 7,
+        Angry =&gt; 2,
+    };
+    happiness_lvl
+
+}
+
+fn main(){
+    let mood = Mood::NotBad;
+    let happiness_lel = match_mood(&amp;mood);
+    println!(&quot;Happiness level is {}&quot; , happiness_lel )
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enum-index"><a class="header" href="#enum-index">enum index</a></h1>
+<ul>
+<li>if an enum does <strong>not</strong> have data then it will be assigned an index that can be accessed.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">enum Test {
+    Test1,
+    Test2
+}
+fn main(){
+    use Test::*;
+    let tests = vec![Test1,Test2];
+    for i in tests{
+        println!(&quot;{}&quot;, i as i32);
+    }
+}
+</code></pre></pre>
+<ul>
+<li>usually they start at 0 and increment by one ... but we can give them custom value.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">enum Star {
+    BrownDwarf = 10 ,    // usually it is 0
+    RedDwarf =50,      // usually it is 1
+    YellowStar = 100,    // usually it is 2
+    RedGiant = 1000,       // usually it is 3
+    DeadStar ,
+}
+
+fn main(){
+    use Star::*;
+    let v = vec![BrownDwarf,RedDwarf, YellowStar,RedGiant,DeadStar];
+    for i in v {
+        println!(&quot;{}&quot; , i as i32);
+    }
+}
+</code></pre></pre>
+<pre><pre class="playground"><code class="language-rust">enum Star {
+    BrownDwarf = 10 ,    // usually it is 0
+    RedDwarf =50,      // usually it is 1
+    YellowStar = 100,    // usually it is 2
+    RedGiant = 1000,       // usually it is 3
+    DeadStar ,                  // 🍄🍄 if left unassigned it will increment by one from the last one...
+}
+
+fn main(){
+    use Star::*;
+    let v = vec![BrownDwarf,RedDwarf, YellowStar,RedGiant];
+    for i in v {
+        match i as u32 {
+            size if size &lt;= 80 =&gt; println!(&quot;Not the biggest Star&quot;),
+            size if size &gt; 80 =&gt; println!(&quot;This is a good sized star&quot;),
+            _ =&gt; println!(&quot;other star&quot;)
+        }
+    }
+    println!(&quot;the Dead start is {}&quot; , DeadStar as i32);
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="exercise-1"><a class="header" href="#exercise-1">exercise 1</a></h1>
+<ul>
+<li>
+<p>Create a Shape enum with the following variants:</p>
+<ul>
+<li>Circle(f32): represents a circle with a given radius</li>
+<li>Rectangle(f32, f32): represents a rectangle with given width and height</li>
+<li>Triangle(f32, f32, f32): represents a triangle with given side lengths</li>
+<li>Implement a perimeter method for the Shape enum that calculates and returns the perimeter of the shape. The perimeter of a circle is its circumference, and the perimeter of a - rectangle is twice the sum of its width and height. The perimeter of a triangle is the sum of its three sides.</li>
+</ul>
+</li>
+</ul>
+<p>Once you've implemented the perimeter method, create instances of each variant of the Shape enum and call the perimeter method on them.</p>
+<pre><pre class="playground"><code class="language-rust">use std::f32::consts::PI;
+
+enum Shape {
+    Circle(f32),
+    Rectangle(f32,f32),
+    Triangle(f32,f32,f32)
+}
+
+
+impl Shape {
+    fn perimeter(&amp;self){
+        match self {
+            Shape::Circle(x) =&gt;  println!(&quot;{}&quot; ,2.0 * x * PI) ,
+            Shape::Rectangle(x,y ) =&gt; println!( &quot;{}&quot; ,2.0 * (x + y)) ,
+            Shape::Triangle(x,y ,z ) =&gt; println!(&quot;{}&quot; ,x + y + z)
+        }
+    }
+}
+
+fn main(){
+
+    let circle = Shape::Circle(5.0);
+    let rectangle = Shape::Rectangle(3.0 , 4.0);
+    let triangle = Shape::Triangle(5.0 , 6.0 , 7.0);
+
+    circle.perimeter();
+    rectangle.perimeter();
+    triangle.perimeter();
+
+}
+
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-exercise-2-1"><a class="header" href="#-exercise-2-1">🏃 exercise 2</a></h1>
+<ul>
+<li>
+<p>you are building a system to manage a library of books. Each book has a title, an author, and a category.</p>
+</li>
+<li>
+<p>The categories are: &quot;Fiction&quot;, &quot;Non-fiction&quot;, &quot;Science fiction&quot;, &quot;Mystery&quot;, and &quot;Romance&quot;.</p>
+</li>
+<li>
+<p>Create an enum called Category to represent these categories, and a struct called Book to represent a book.</p>
+</li>
+<li>
+<p>The Book struct should have fields for the title, author, and category.</p>
+</li>
+<li>
+<p>Write a function called is_romance that takes a Book as input and returns true if the book's category is &quot;Romance&quot;, and false otherwise.</p>
+</li>
+<li>
+<p>Finally, create a main function that creates three instances of Book with different titles, authors, and categories (at least one of which should be &quot;Romance&quot;), and calls the is_romance function on each one to check if it is a romance book. Use println! to print the result for each book.</p>
+</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">enum Category {
+    Fiction,
+    NonFiction,
+    ScienceFiction,
+    Mystery,
+    Romance,
+}
+
+struct Book {
+    title: String,
+    author: String,
+    category: Category,
+}
+
+fn is_romance(book: Book) -&gt; bool {
+    match book.category {
+        Category::Romance =&gt; true,
+        _ =&gt; false,
+    }
+}
+
+fn main() {
+    let book1 = Book {
+        title: &quot;Pride and Prejudice&quot;.to_string(),
+        author: &quot;Jane Austen&quot;.to_string(),
+        category: Category::Romance,
+    };
+    let book2 = Book {
+        title: &quot;The Hitchhiker's Guide to the Galaxy&quot;.to_string(),
+        author: &quot;Douglas Adams&quot;.to_string(),
+        category: Category::ScienceFiction,
+    };
+    let book3 = Book {
+        title: &quot;The Da Vinci Code&quot;.to_string(),
+        author: &quot;Dan Brown&quot;.to_string(),
+        category: Category::Mystery,
+    };
+
+    println!(&quot;Book 1 is a romance: {}&quot;, is_romance(book1));
+    println!(&quot;Book 2 is a romance: {}&quot;, is_romance(book2));
+    println!(&quot;Book 3 is a romance: {}&quot;, is_romance(book3));
+}
+</code></pre></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="-exercise-3"><a class="header" href="#-exercise-3">🏃 exercise 3</a></h1>
+<ul>
+<li>Write a program that defines an enum Direction with four variants: Up, Down, Left, and Right.</li>
+<li>Define a struct Point with x and y fields of type i32. Add a method to the Point struct called move_point that takes a Direction argument and moves the point in that direction by one unit (i.e., increments or decrements the x or y field by one, depending on the direction).</li>
+<li>Finally, write a main function that creates a Point at (0, 0), moves it up and to the right, and prints the final coordinates of the point.</li>
+</ul>
+<pre><pre class="playground"><code class="language-rust">enum Direction {
+    Up,
+    Down,
+    Left,
+    Right
+}
+
+struct Point {
+    x: i32,
+    y: i32
+}
+
+impl Point {
+    fn move_point(&amp;mut self , direction: Direction){
+        match direction {
+            Direction::Up =&gt; self.y += 1,
+            Direction::Down=&gt; self.y -= 1,
+            Direction::Right =&gt; self.x +=1 ,
+            Direction::Left =&gt; self.x -=1
+        }
+    }
+}
+
+fn main(){
+    let mut player = Point{x: 0, y: 0};
+    player.move_point(Direction::Up);
+    player.move_point(Direction::Left);
+    println!(&quot;The player is at point x: {} , y: {}&quot;, player.x  , player.y)
+
+}
+
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
